@@ -1,49 +1,46 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 /**
- * main - prints all possible combinations of two two-digit numbers
+ * main - print pairs of double digit combos
  *
  * Return: Always 0
  */
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int l_d;
+	int i, j, k, m;
 
-	int c2;
-	int f_d2;
-	int l_d2;
-
-	while (c <= 98)
+	i = 48;
+	while (j < 58)
 	{
-		f_d = (c / 10 + '0');
-		l_d = (c % 10 + '0');
-		c2 = 0;
-
-		while (c2 <= 99)
+		j = 48;
+		while (j < 58)
 		{
-			f_d2 = (c2 / 10 + '0');
-			l_d2 = (c2 % 10 + '0');
-
-			if (c < c2)
+			m = j + 1;
+			k = i;
+			while (k < 58)
 			{
-				putchar(f_d);
-				putchar(l_d);
-				putchar(' ');
-				putchar(f_d2);
-
-				if (c != 98)
+				while (m < 58)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(i);
+					putchar(j);
+					putchar(32);
+					putchar(k);
+					putchar(m);
+					if (i < 57 || j < 56 || k < 57 || m < 57)
+					{
+						putchar(44);
+						putchar(32);
+					}
+					m++;
 				}
+				m = 48;
+				k++;
 			}
-			c2++;
+			j++;
 		}
-		c++;
+		i++;
 	}
-	putchar('\n');
+	putchar(0);
 	return (0);
 }
 
