@@ -1,46 +1,33 @@
 #include <stdio.h>
-
+#include <unistd.h>
 /**
- * main - print pairs of double digit combos
- *
+ * main - Entry point
+ * Description: prints all possible combination of 2-digit numbers
  * Return: Always 0
  */
 int main(void)
 {
-	int i, j, k, m;
+	int i, j;
 
-	i = 48;
-	while (j < 58)
+	for (i = 0; i <= 99; i++)
 	{
-		j = 48;
-		while (j < 58)
+		for (j = 0; j <= 99; j++)
 		{
-			m = j + 1;
-			k = i;
-			while (k < 58)
+			if (i  < j && i != j)
 			{
-				while (m < 58)
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
+				putchar(' ');
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
+				if (i != 98 || j != 99)
 				{
-					putchar(i);
-					putchar(j);
-					putchar(32);
-					putchar(k);
-					putchar(m);
-					if (i < 57 || j < 56 || k < 57 || m < 57)
-					{
-						putchar(44);
-						putchar(32);
-					}
-					m++;
+					putchar(',');
+					putchar(' ');
 				}
-				m = 48;
-				k++;
 			}
-			j++;
 		}
-		i++;
 	}
-	putchar(0);
+	putchar('\n');
 	return (0);
 }
-
