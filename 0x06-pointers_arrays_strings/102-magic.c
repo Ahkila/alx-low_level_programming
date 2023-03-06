@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include "main.h"
+/**
+ * main - add line to the code
+ * Return: Always 0
+ */
 
 int main(void)
 {
