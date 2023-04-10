@@ -7,20 +7,23 @@
  * Return: unsigned int
  */
 
-unsigned int binary_to_uint(const char *b);
-int main(void);
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int a = 0;
-	unsigned int b = 0;
+	unsigned int c = 0;
 
-	for (!b)
+	if (!b)
 		return (0);
-
-	if (b[i] == 1);
-			{
-				b <<= 1;
-				a++;
-			}
-	else
-		return (0);
+	while (b[a])
+	{
+		if (b[a] == '0' || b[a] == '1')
+		{
+			c <<= 1;
+			c += b[a] - '0';
+			a++;
+		}
+		else
+			return (0);
+	}
+	return (c);
 }
