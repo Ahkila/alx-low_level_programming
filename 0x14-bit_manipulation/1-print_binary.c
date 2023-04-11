@@ -9,12 +9,15 @@
 
 void print_binary(unsigned long int n)
 {
-	int a;
-	{
-	if (a > 1)
-		print_binary(a >> 1);
+	int size = sizeof(unsigned long int);
 
-	_putchar((a & 1) + '0');
+	int num_bits = size * 8;
+
+	for (int i = num_bits - 1; i >= 0; i--)
+	{
+		unsigned long int bit = (n >> i) & 1;
+
+		putchar('%lu', bit);
 	}
-	_putchar('\n');
+	putchar('\n');
 }
