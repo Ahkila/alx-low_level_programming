@@ -10,12 +10,11 @@
 void print_binary(unsigned long int n)
 {
 	int a;
-
-	for (a = sizeof(unsigned long int) * 8 - 1; a >= 0; a--)
 	{
-		char c = (n >> a) & 1 ? '1' : '0';
+	if (a > 1)
+		print_binary(a >> 1);
 
-		putchar(c);
+	_putchar((a & 1) + '0');
 	}
-	putchar('\n');
+	_putchar('\n');
 }
